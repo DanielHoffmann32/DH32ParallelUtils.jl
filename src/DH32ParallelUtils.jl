@@ -31,4 +31,19 @@ function split_int(N::Int64, n_procs::Int64)
     ix_start, ix_end
 end
 
+"""
+Split a integer N in n_procs integer pieces of approximately the same lengths.
+
+Input: as for split_int.
+
+Output:
+
+- Array of n_procs integer lengths summing up to N
+    
+"""
+function split_int_lengths(N::Int64, n_procs::Int64)
+    ix_start, ix_end = split_int(N, n_procs)
+    ix_end - ix_start + 1 
+end
+                           
 end # module
