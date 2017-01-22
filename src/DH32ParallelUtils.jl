@@ -1,7 +1,7 @@
 module DH32ParallelUtils
 
 # package code goes here
-export split_int
+export split_int, split_int_lengths
 
 """
 Splits an integer number N into a set of n_procs contiguous, non-overlapping integer intervals [ix_start[i], ix_end[i]].
