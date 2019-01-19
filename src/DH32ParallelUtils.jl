@@ -21,7 +21,7 @@ Output: ix_start, ix_end
 function split_int(N::Int64, n_procs::Int64)
     ix_start = zeros(Int64,n_procs)
     ix_end = zeros(Int64,n_procs)
-    float_bounds = linspace(1., Float64(N), n_procs+1)
+    float_bounds = range(1.0, stop=Float64(N), length=n_procs+1)
     ix_start[1] = 1
     ix_end[n_procs] = N
     for i in 2:n_procs
